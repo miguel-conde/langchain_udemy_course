@@ -21,7 +21,7 @@ class LGBasicAgent():
             Invokes the state graph with memory checkpointing to process the given state and configuration.
     """
     
-    def __init__(self, tools: List[Callable], llm = ChatOpenAI(model="gpt-4o"), sys_prompt: str = None) -> None:
+    def __init__(self, tools: List[Callable], llm = ChatOpenAI(model="gpt-4o"), sys_prompt: str = None, memory = MemorySaver()) -> None:
         """
         Initializes the basic language chain agent.
         
@@ -29,11 +29,13 @@ class LGBasicAgent():
             tools (List[Callable]): A list of callable tools that the agent can use.
             llm (ChatOpenAI, optional): The language model to be used. Defaults to ChatOpenAI(model="gpt-4o").
             sys_prompt (str, optional): The system prompt message. Defaults to None.
+            memory (MemorySaver, optional): The memory saver for checkpointing. Defaults to MemorySaver().
             
         Attributes:
             llm_with_tools (ChatOpenAI): The language model bound with the provided tools.
             tools (List[Callable]): The list of tools provided.
             sys_msg (SystemMessage): The system message for the assistant.
+            memory (MemorySaver): The memory saver for checkpointing.
             builder (StateGraph): The state graph builder for managing control flow.
             memory (MemorySaver): The memory saver for checkpointing.
             react_graph_memory (StateGraph): The compiled state graph with memory checkpointing.
@@ -45,6 +47,8 @@ class LGBasicAgent():
         # System message
         if sys_prompt is None:
             self.sys_msg = SystemMessage(content="You are a helpful assistant tasked with performing arithmetic on a set of inputs.")
+            
+        self.memory = memory    
             
         self._build_graph()
         
@@ -69,14 +73,24 @@ class LGBasicAgent():
         self.sys_msg = SystemMessage(content=sys_prompt)
         self._build_graph()
         
-    def set_llm(self, llm: ChatOpenAI) -> None:
+    def set_llm(self, llm) -> None:
         """
         Sets the language model for the agent.
         
         Args:
-            llm (ChatOpenAI): The language model.
+            llm: The language model.
         """
         self.llm_with_tools = llm.bind_tools(self.tools)
+        self._build_graph()
+        
+    def set_memory(self, memory) -> None:
+        """
+        Sets the memory saver for the agent.
+        
+        Args:
+            memory : The memory saver.
+        """
+        self.memory = memory
         self._build_graph()
         
 
@@ -101,8 +115,6 @@ class LGBasicAgent():
             tools_condition,
         )
         self.builder.add_edge("tools", "assistant")
-        
-        self.memory = MemorySaver()
         
         self.react_graph_memory = self.builder.compile(checkpointer=self.memory)
     
