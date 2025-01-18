@@ -1,7 +1,8 @@
 .env
 __pycache__/basic_lg_agent.cpython-312.pyc
 __pycache__/example_tools.cpython-312.pyc
-PYTHON/libutils/__pycache__/__init__.cpython-312.pyc
-PYTHON/libutils/__pycache__/basic_lg_agent.cpython-312.pyc
-PYTHON/libutils.egg-info/PKG-INFO
-PYTHON/libutils.egg-info/SOURCES.txt
+PYTHON/libutils/__pycache__/
+PYTHON/libutils.egg-info/
+*.db
+state_db/example.db-shm
+state_db/example.db-wal
