@@ -14,6 +14,7 @@ dataclasses-json==0.6.7
 debugpy==1.8.11
 decorator==5.1.1
 distro==1.9.0
+dydantic==0.0.7
 executing==2.1.0
 frozenlist==1.5.0
 greenlet==3.1.1
@@ -40,7 +41,7 @@ langgraph-checkpoint==2.0.9
 langgraph-checkpoint-sqlite==2.0.1
 langgraph-sdk==0.1.48
 langsmith==0.2.10
--e git+https://github.com/miguel-conde/langchain_udemy_course.git@bc428642346401cf588c3abc68e6b66615fb8b44#egg=libutils&subdirectory=PYTHON
+-e git+https://github.com/miguel-conde/langchain_udemy_course.git@40ae9a04b0f0a1e29a8d3c9bc5fe773cfd8e9c60#egg=libutils&subdirectory=PYTHON
 marshmallow==3.25.1
 matplotlib-inline==0.1.7
 msgpack==1.1.0
@@ -80,6 +81,7 @@ tiktoken==0.8.0
 tornado==6.4.2
 tqdm==4.67.1
 traitlets==5.14.3
+trustcall==0.0.28
 typing-inspect==0.9.0
 typing_extensions==4.12.2
 urllib3==2.3.0
