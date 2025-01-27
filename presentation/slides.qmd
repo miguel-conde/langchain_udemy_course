@@ -1,0 +1,110 @@
+---
+title: "LangGraph"
+author: "Miguel Conde"
+date: "2025/01/27"
+format: 
+  revealjs:
+    embed-resources: true
+    scrollable: true
+---
+
+## Resources
+
+- [LangGraph](https://www.langchain.com/langgraph)
+- [Langchain Academy](https://academy.langchain.com/)
+- [Introduction to LangGraph](https://academy.langchain.com/courses/intro-to-langgraph)
+
+## FAQ
+
+![](faq.png)
+
+## LangGraph stack
+
+![](langgraph_stack.png)
+
+## Control Flows
+
+![](fixed_vs_LLM.png)
+
+## Agent
+
+![](agent.png)
+
+## Many kinds of agents
+
+![](kinds.png)
+
+## The challenge
+
+![](challenges.png)
+
+## What is LangGraph for?
+
+![](help)
+
+## Basic demo {.smaller}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+[ReAct](https://react-lm.github.io/), a general agent architecture.
+
++ `act` - let the model call specific tools
++ `observe` - pass the tool output back to the model
++ `reason` - let the model reason about the tool output to decide what to do next (e.g., call another tool or just respond directly)
+:::
+
+::: {.column width="60%"}
+
+![](react.png)
+:::
+
+::::
+
+## Advanced topics {.smaller}
+
+- Messages: **trim**, **filter**, **summarize**
+- **External memory**
+- **Human-in-the-loop**
+  - **Streaming**: 
+    - Sync and async methods / "updates" and "values" modes
+    - Messages / tokens
+  - **Breakpoints**: a simple way to stop the graph at specific steps.
+    - To interrupt the graph and await user ***approval*** before executing the next node.
+    - But breakpoints are also opportunities to modify the graph state (***editing*** the state) and introduce **human feedback**.
+    - Breakpoints can be conditionally triggered (**dynamic breakpoints**)
+  - Support for **debugging**: viewing, re-playing, and even forking from past states (*time travel*)
+- **Parallelization**
+- **Sub-graphs**
+- **Map-Reduce**
+
+## Demo - Research assistant
+
+![](research%20assistant.png)
+
+## Demo - Research assistant
+
+![](research%20assistant%20graph.jpg)
+
+## Short and Long-Term Memory
+
+[](https://files.cdn.thinkific.com/file_uploads/967498/attachments/dc4/f52/87a/LangChain_Academy_-_Introduction_to_LangGraph_-_Long-Term_Memory.pdf)
+
+![](short_long_term_memory.png)
+
+### Short Term Memory
+
+![](short_term_memory.png)
+
+### Long Term Memory
+
+![](long_term_memory.png)
+
+### Memory store
+
+![](store.png)
+
+## Bonus
+
+- [GenAI Agents: Comprehensive Repository for Development and Implementation](https://github.com/NirDiamant/GenAI_Agents)
+- [Our AI Data Science Team (🪖 An Army Of Agents)](https://github.com/business-science/ai-data-science-team)
