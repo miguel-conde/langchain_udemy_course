@@ -82,9 +82,14 @@ format:
     - To await user ***approval*** before executing the next node.
     - To modify the graph state (***editing***) and introduce **human feedback**.
     - Can be conditionally triggered (**dynamic breakpoints**)
-  - Support for **debugging**: viewing, re-playing, and even forking from past states (*time travel*)
+
 
 ## And more Advanced topics 
+
+- More **Human-in-the-loop**
+  - Support for **debugging**: viewing, re-playing, and even forking from past states (*time travel*)
+
+<br>
 
 - **Parallelization**
 - **Sub-graphs**
