@@ -6,7 +6,10 @@ format:
   revealjs:
     embed-resources: true
     scrollable: true
+    navigation-mode: vertical
 ---
+
+# Basics
 
 ## Resources
 
@@ -26,7 +29,7 @@ format:
 
 ![](fixed_vs_LLM.png)
 
-## Agent
+# Agents
 
 ![](agent.png)
 
@@ -61,7 +64,9 @@ format:
 
 ::::
 
-## Advanced topics {.smaller}
+# Advanced topics
+
+## Advanced topics 
 
 - Messages: **trim**, **filter**, **summarize**
 - **External memory**
@@ -69,14 +74,23 @@ format:
   - **Streaming**: 
     - Sync and async methods / "updates" and "values" modes
     - Messages / tokens
+
+## More Advanced topics 
+
+- More **Human-in-the-loop**
   - **Breakpoints**: a simple way to stop the graph at specific steps.
-    - To interrupt the graph and await user ***approval*** before executing the next node.
-    - But breakpoints are also opportunities to modify the graph state (***editing*** the state) and introduce **human feedback**.
-    - Breakpoints can be conditionally triggered (**dynamic breakpoints**)
+    - To await user ***approval*** before executing the next node.
+    - To modify the graph state (***editing***) and introduce **human feedback**.
+    - Can be conditionally triggered (**dynamic breakpoints**)
   - Support for **debugging**: viewing, re-playing, and even forking from past states (*time travel*)
+
+## And more Advanced topics 
+
 - **Parallelization**
 - **Sub-graphs**
 - **Map-Reduce**
+
+# Demo - Research assistant
 
 ## Demo - Research assistant
 
@@ -86,25 +100,31 @@ format:
 
 ![](research%20assistant%20graph.jpg)
 
+# Memory
+
 ## Short and Long-Term Memory
 
-[](https://files.cdn.thinkific.com/file_uploads/967498/attachments/dc4/f52/87a/LangChain_Academy_-_Introduction_to_LangGraph_-_Long-Term_Memory.pdf)
+[Long-Term_Memory.pdf](https://files.cdn.thinkific.com/file_uploads/967498/attachments/dc4/f52/87a/LangChain_Academy_-_Introduction_to_LangGraph_-_Long-Term_Memory.pdf)
 
 ![](short_long_term_memory.png)
 
-### Short Term Memory
+## Short Term Memory
 
 ![](short_term_memory.png)
 
-### Long Term Memory
+## Long Term Memory
 
 ![](long_term_memory.png)
 
-### Memory store
+## When to update long-term memory
+
+![](when_update_memory.png)
+
+## Memory store
 
 ![](store.png)
 
-## Bonus
+# Bonus
 
 - [GenAI Agents: Comprehensive Repository for Development and Implementation](https://github.com/NirDiamant/GenAI_Agents)
 - [Our AI Data Science Team (🪖 An Army Of Agents)](https://github.com/business-science/ai-data-science-team)
