@@ -129,6 +129,32 @@ format:
 
 ![](store.png)
 
+# Deployment
+
+## Components
+
+![](deployment.png)
+
+## Components {.smaller}
+
+- [CLI](https://langchain-ai.github.io/langgraph/concepts/langgraph_cli/): Builds Docker image w/ code for the server, your graph, and dependencies
+- Server
+  - HTTP worker: Client communication, creating run ID for requests to execute graph (e.g., invoke, stream)
+  - Queue worker: Executing the graph 
+- Databases
+    - [Redis](https://langchain-ai.github.io/langgraph/concepts/langgraph_server/#persistence-and-task-queue): Communication between workers (streaming, run cancellation)
+    - [Postgres](https://langchain-ai.github.io/langgraph/concepts/langgraph_server/#persistence-and-task-queue): Support for short / long-term memory, task queue
+- Studio
+  - LangGraph [Cloud](https://langchain-ai.github.io/langgraph/concepts/#langgraph-platform) and [Studio](https://langchain-ai.github.io/langgraph/concepts/langgraph_studio/): Use the [CLI](https://langchain-ai.github.io/langgraph/concepts/langgraph_cli/) to build the Docker image for you
+- Clients
+  - [Python and JS SDK](https://langchain-ai.github.io/langgraph/concepts/sdk/): Clients for working with LangGraph server API
+  - [Remote Graph](https://langchain-ai.github.io/langgraph/how-tos/use-remote-graph/): For working with deployed graphs in LangGraph library 
+
+## Production
+
+![](production.png)
+
+
 # Bonus
 
 - [GenAI Agents: Comprehensive Repository for Development and Implementation](https://github.com/NirDiamant/GenAI_Agents)
