@@ -6,7 +6,7 @@ def load_env():
 
 def get_together_api_key():
     load_env()
-    together_api_key = os.getenv("TOGETHER_API_KEY")
+    together_api_key = os.getenv("TOGETHER_API_KEY") # https://api.together.xyz/signin?redirectUrl=/settings/api-keys
     return together_api_key
 
 
